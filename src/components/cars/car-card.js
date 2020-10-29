@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from './icon'
+import Icon from '../icon'
 import '../assets/img/master.svg'
 
 export const CarCard = ({ children }) => {

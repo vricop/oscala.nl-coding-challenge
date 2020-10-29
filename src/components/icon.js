@@ -2,14 +2,14 @@ import React from 'react'
 import master from '../assets/img/master.svg'
 import PropTypes from 'prop-types'
 
-const Icon = ({ name, className, ...restProps }) => (
+const Icon = ({ name, width=16, height, className, ...restProps }) => (
   <svg 
     aria-hidden="true"
     focusable="false"
     role="img"
-    width="16"
-    height="16"
-    className={`fill-currentColor ${className}`} {...restProps}>
+    width={width}
+    height={height || width}
+    className={`fill-currentColor pointer-events-none ${className}`} {...restProps}>
     <use href={`${master}#${name}`} />
   </svg>
 );

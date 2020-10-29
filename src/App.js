@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.scss'
-import CarsList from './pages/cars-list'
+import Cars from './pages/cars'
 
 export default function App() {
-  return <CarsList />
+  return <Cars />
 }
