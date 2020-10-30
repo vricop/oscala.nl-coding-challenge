@@ -4,7 +4,7 @@ import '../assets/img/master.svg'
 
 export const CarCard = ({ children }) => {
   return (
-    <div className="flex flex-col | rounded-lg | overflow-hidden | shadow-md border border-gray-200">{children}</div>
+    <div className="flex flex-col | rounded-lg | overflow-hidden | shadow-md">{children}</div>
   )
 }
 

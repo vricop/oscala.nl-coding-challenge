@@ -11,7 +11,7 @@ import {
 
 import currencyConverter from '../utils/currency-converter'
 
-export default ({ data }) => (
+const CarCardContainer = ({ data }) => (
   <div className="grid grid-cols-4-auto-fit col-gap-5 row-gap-6">
     {data.map(car => {
       const { autotelex_id, images, brand, model, sell_price, bought_year, mileage, body } = car
@@ -25,7 +25,7 @@ export default ({ data }) => (
             <Details>
               <Item icon="calendar">{bought_year}</Item>
               <Item icon="tachometer">{mileage} Km</Item>
-              <Item icon="car">{car.body}</Item>
+              <Item icon="car">{body}</Item>
             </Details>
             <Notice />
           </Panel>
@@ -34,3 +34,5 @@ export default ({ data }) => (
     })}
   </div>
 )
+
+export default CarCardContainer
