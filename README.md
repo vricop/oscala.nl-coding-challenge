@@ -33,7 +33,7 @@ const tranmissionWords = {
 ## Additional modules used
 
 - **sass**: dependency for petricorcss
-- **petricorcss**: for working faster when designin components with css
+- **petricorcss**: for working faster when designing components with css
 - **purgecss**: to removed unused css
 
 ## Techniques used
