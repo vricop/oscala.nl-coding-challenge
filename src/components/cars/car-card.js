@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Icon from '../icon'
 import '../assets/img/master.svg'
 
-export const CarCard = ({ children }) => {
-  return (
-    <div className="flex flex-col | rounded-lg | overflow-hidden | shadow-md">{children}</div>
-  )
-}
+export const CarCard = ({ children }) => (
+  <div className="flex flex-col | relative | rounded-lg | overflow-hidden | shadow-md">
+    {children}
+  </div>
+)
 
 export const Thumbnail = ({className, ...restProps}) => {
   return (
@@ -26,9 +27,13 @@ export const Panel = ({ children }) => {
   return <div style={style} className="flex flex-col h-full | p-6 | text-gray-500 font-sm font-medium">{children}</div>
 }
 
-export const Title = ({ children }) => {
-  return <h2 className="text-base leading-tight text-gray-900 font-bold | m-0">{children}</h2>
-}
+export const Title = ({ children }) => (
+  <h2 className="text-base leading-tight text-gray-900 font-bold | m-0">
+    <Link to="/car" className="link-stretch">
+      {children}
+    </Link>
+  </h2>
+)
 
 export const Price = ({ includes, children }) => (
   <span className="block | text-info-400">

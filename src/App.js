@@ -1,7 +1,20 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.scss'
 import Cars from './pages/cars'
+import Car from './pages/car'
 
-export default function App() {
-  return <Cars />
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/">
+        <Cars />
+      </Route>
+      <Route path="/car">
+        <Car />
+      </Route>
+    </Switch>
+  </Router>
+)
+
+export default App

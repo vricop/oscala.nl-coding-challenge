@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Icon from '../icon'
 import '../assets/img/master.svg'
 
 export const CarBlock = ({ children }) => (
-  <div className="grid grid-cols-3 | rounded-lg | overflow-hidden | shadow-md border border-gray-200">
+  <div className="grid grid-cols-3 | relative | rounded-lg | overflow-hidden | shadow-md border border-gray-200">
     {children}
   </div>
 )
@@ -36,7 +37,9 @@ export const Header = ({ children }) => {
 
 export const Title = ({ children }) => (
   <h2 className="text-2xl leading-tight text-gray-900 | m-0">
-    {children}
+    <Link to="/car" className="link-stretch">
+      {children}
+    </Link>
   </h2>
 )
 
