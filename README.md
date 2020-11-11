@@ -30,11 +30,19 @@ const tranmissionWords = {
 }
 ```
 
+The `accessories` property from the JSON file contains html strings, which makes it
+hard to deal with when appending as `{children}` react components. React escapes
+html for [security reasons](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml). To tackle this problem
+I've used a module to parse html and prevent *cross-site scripting (XSS) attacks* 
+
 ## Additional modules used
 
 - **sass**: dependency for petricorcss
 - **petricorcss**: for working faster when designing components with css
 - **purgecss**: to removed unused css
+- **@glidejs/glide**
+- **react-router-dom** for building SPAs
+- **html-react-parser** for parsing html strings and avoid cross-site scripting (XSS) attacks
 
 ## Techniques used
 
