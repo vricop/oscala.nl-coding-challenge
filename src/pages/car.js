@@ -18,6 +18,8 @@ import {
 } from '../components/car-info'
 
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '../components/tabs'
+import { BulletList, BulletItem } from '../components/bullet-list'
+import Icon from '../components/icon'
 import { getFuelString } from '../utils/convert-labels-to-strings'
 import { useParams } from 'react-router-dom'
 import data from '../data/cars'
@@ -77,9 +79,11 @@ const Car = ({ props }) => {
               </p>
             </TabPanel>
             <TabPanel key="2" target="2">
-              <ul className="pl-4 m-0">
-                {accessories.map((item, i) => <li key={`accessory-${i}`}>{item}</li>)}
-              </ul>
+              <BulletList className="pl-4 m-0">
+                {accessories.map((item, i) => (
+                  <BulletItem key={`accessory-${i}`}>{item}</BulletItem>
+                ))}
+              </BulletList>
             </TabPanel> 
           </TabPanels>
         </Tabs>
