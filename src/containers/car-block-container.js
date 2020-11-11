@@ -17,16 +17,18 @@ const CarBlockContainer = ({ data }) => (
   <div className="grid grid-rows-auto col-gap-5 row-gap-6">
     {data.map(car => {
       const {
-        autotelex_id, images, brand, model, sell_price, bought_year, mileage,
-        body, fuel, power_kw, power_pk, transmission, co2_emission
+        body, fuel, power_kw, power_pk, transmission, co2_emission, plate_number,
+        meldcode, autotelex_id, images, brand, model, sell_price, bought_year, mileage,
       } = car
 
+      const id = plate_number || autotelex_id || meldcode;
+
       return (
-        <CarBlock key={autotelex_id}>
-          <Thumbnail src={images[0]} alt="" />
+        <CarBlock key={id}>
+          <Thumbnail src={images[0]} alt={`${brand} ${model}`} />
           <Panel>
             <Header>  
-              <Title>{brand} {model}</Title>
+              <Title id={id}>{brand} {model}</Title>
               <Price>{currencyConverter(sell_price)}</Price>
             </Header>
             <Details>

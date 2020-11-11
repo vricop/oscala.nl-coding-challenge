@@ -1,4 +1,8 @@
 @use '../node_modules/petricorcss/config' with (
+  $stack-gap: (
+    '19': 4.75rem,
+  ),
+
   $breakpoints: (
     'xl': (min: 1280px)
   ),
@@ -8,10 +12,18 @@
   ),
 
   $variants: (
-    'colors': [hover active],
+    'box-shadow'            : [focus],
+    'colors'                : [hover active],
     'font-feature-settings' : true,
+    'padding'               : [responsive children],
   )
 );
 
 @use '../node_modules/petricorcss';
 @use 'scss/fonts';
+
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";

@@ -14,13 +14,18 @@ import currencyConverter from '../utils/currency-converter'
 const CarCardContainer = ({ data }) => (
   <div className="grid grid-cols-4-auto-fit col-gap-5 row-gap-6">
     {data.map(car => {
-      const { autotelex_id, images, brand, model, sell_price, bought_year, mileage, body } = car
+      const { 
+        model, sell_price, bought_year, mileage, body,
+        plate_number, autotelex_id, meldcode, images, brand,
+      } = car
+
+      const id = plate_number || autotelex_id || meldcode;
 
       return (
-        <CarCard key={autotelex_id}>
-          <Thumbnail src={images[0]} alt="" />
+        <CarCard key={id}>
+          <Thumbnail src={images[0]} alt={`${brand} ${model}`} />
           <Panel>
-            <Title>{brand} {model}</Title>
+            <Title id={id}>{brand} {model}</Title>
             <Price>{currencyConverter(sell_price)}</Price>
             <Details>
               <Item icon="calendar">{bought_year}</Item>

@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 import Icon from '../icon'
 import '../assets/img/master.svg'
 
-export const CarBlock = ({ children }) => (
-  <div className="grid grid-cols-3 | relative | rounded-lg | overflow-hidden | shadow-md border border-gray-200">
+export const CarBlock = ({ children, ...restProps }) => (
+  <div {...restProps} className="grid grid-cols-3 | relative | rounded-lg | overflow-hidden | shadow-md border border-gray-200 | bg-white">
     {children}
   </div>
 )
 
-export const Thumbnail = ({className, ...restProps}) => {
+export const Thumbnail = ({className, alt, ...restProps}) => {
   return (
     <figure className="col-span-1">
       <div className="relative overflow-hidden | aspect-ratio-4:3">
-        <img className={`absolute inset-0 | block | w-full h-full max-w-full | object-cover | ${className}`} {...restProps} />
+        <img alt={alt} className={`absolute inset-0 | block | w-full h-full max-w-full | object-cover | ${className}`} {...restProps} />
       </div>
     </figure>
   )
@@ -35,9 +35,9 @@ export const Header = ({ children }) => {
   return <header className="flex items-center | text-2xl font-bold tracking-tight">{children}</header>
 }
 
-export const Title = ({ children }) => (
+export const Title = ({ children, id }) => (
   <h2 className="text-2xl leading-tight text-gray-900 | m-0">
-    <Link to="/car" className="link-stretch">
+    <Link to={`/car/${id}`} className="link-stretch">
       {children}
     </Link>
   </h2>

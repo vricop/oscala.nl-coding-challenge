@@ -10,7 +10,7 @@ const App = () => (
       <Route exact path="/">
         <Cars />
       </Route>
-      <Route path="/car">
+      <Route path="/car/:id">
         <Car />
       </Route>
     </Switch>

@@ -4,16 +4,16 @@ import Icon from '../icon'
 import '../assets/img/master.svg'
 
 export const CarCard = ({ children }) => (
-  <div className="flex flex-col | relative | rounded-lg | overflow-hidden | shadow-md">
+  <div className="flex flex-col | relative | rounded-lg | overflow-hidden | shadow-md | bg-white">
     {children}
   </div>
 )
 
-export const Thumbnail = ({className, ...restProps}) => {
+export const Thumbnail = ({className, alt, ...restProps}) => {
   return (
     <figure>
       <div className="relative overflow-hidden | aspect-ratio-4:3">
-        <img className={`absolute inset-0 | block | w-full h-full max-w-full | object-cover | ${className}`} {...restProps} />
+        <img alt={alt} className={`absolute inset-0 | block | w-full h-full max-w-full | object-cover | ${className}`} {...restProps} />
       </div>
     </figure>
   )
@@ -27,9 +27,9 @@ export const Panel = ({ children }) => {
   return <div style={style} className="flex flex-col h-full | p-6 | text-gray-500 font-sm font-medium">{children}</div>
 }
 
-export const Title = ({ children }) => (
+export const Title = ({ children, id }) => (
   <h2 className="text-base leading-tight text-gray-900 font-bold | m-0">
-    <Link to="/car" className="link-stretch">
+    <Link to={`/car/${id}`} className="link-stretch">
       {children}
     </Link>
   </h2>
